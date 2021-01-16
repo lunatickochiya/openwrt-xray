@@ -19,8 +19,8 @@ jobs:
 
       - name: Download
         run: |
-          curl -L -o release/config/xray-linux-mips.zip "https://github.com/lunatickochiya/openwrt-xray/releases/latest/download/xray-linux-mips.zip"
-          curl -L -o release/config/xray-linux-mipsle.zip "https://github.com/lunatickochiya/openwrt-xray/releases/latest/download/xray-linux-mipsle.zip"
+          curl -L -o xray-linux-mips.zip "https://github.com/lunatickochiya/openwrt-xray/releases/latest/download/xray-linux-mips.zip"
+          curl -L -o xray-linux-mipsle.zip "https://github.com/lunatickochiya/openwrt-xray/releases/latest/download/xray-linux-mipsle.zip"
 
       - name: push
         run: |
