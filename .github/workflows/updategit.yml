@@ -1,0 +1,30 @@
+name: Update ZIP to REPO
+
+on:
+  repository_dispatch:
+  release:
+    types: [published]
+  push:
+    branches:
+      - master
+    paths:
+      - 'startupdate'
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v2
+
+      - name: Download
+        run: |
+          curl -L -o release/config/xray-linux-mips.zip "https://github.com/lunatickochiya/openwrt-xray/releases/latest/download/xray-linux-mips.zip"
+          curl -L -o release/config/xray-linux-mipsle.zip "https://github.com/lunatickochiya/openwrt-xray/releases/latest/download/xray-linux-mipsle.zip"
+
+      - name: push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -am "update mips, mipsle"
+          git push -v --progress
