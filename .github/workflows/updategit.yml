@@ -10,7 +10,7 @@ on:
     paths:
       - 'startupdate'
   schedule:
-      - cron: 0 */36 * * *
+      - cron: 0 */39 * * *
 
 jobs:
   update:
