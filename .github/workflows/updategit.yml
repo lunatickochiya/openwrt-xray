@@ -9,8 +9,8 @@ on:
       - master
     paths:
       - 'startupdate'
-  schedule:
-      - cron: 0 */39 * * *
+#  schedule:
+#      - cron: 0 */39 * * *
 
 jobs:
   update:
